@@ -13,7 +13,7 @@ Its graph is the graph of y=2<sup>2</sup> reflected over y=x.
 
 **Recursive Abstraction**: When I am asked to find the desired name
 within the low and high page limits, the recursive abstraction can find the
-desired name within the next smaller-sized page limits.
+desired name within the next smaller-sized page limits using these instructions.
 
 **Binary Expression**: the low limit is greater than the high limit
 
@@ -26,9 +26,10 @@ name on pageToCheck.
 - If the comparison returns 0, return pageToCheck. (**Base case**)
 - Else if the comparison returns a negative number, the recursive abstraction
 can find the desired name within the low limit and pageToCheck-1 (as the
-high limit). (**Recursive Abstraction**)
+high limit) using these instructions. (**Recursive Abstraction**)
 - Else the recursive abstraction can find the desired name within pageToCheck+1
-(as the low limit) and the high limit. (**Recursive Abstraction**)
+(as the low limit) and the high limit using these instructions. (**Recursive
+Abstraction**)
 
 
 
