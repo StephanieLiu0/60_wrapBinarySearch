@@ -10,17 +10,21 @@ public class OrderedList_inArraySlots
     implements OrderedList {
 
     private java.util.ArrayList<Integer> list_iAS;
+    private int iterationCount;
 
-
+    public int cost() {
+	return iterationCount;
+    }
+    
     /**
       @return the index of any occurrence of
               \findMe in this list, or -1 if
               \findMe is absent from this list.
      */
     public int indexOf( Integer findMe) {
-        return indexOf_whileStyle( findMe);
-        // return indexOf_recursive(
-            // findMe, 0, list_iAS.size() -1);
+        // return indexOf_whileStyle( findMe);
+        return indexOf_recursive(
+	       findMe, 0, list_iAS.size() -1, 0);
     }
 
 
@@ -30,11 +34,13 @@ public class OrderedList_inArraySlots
     private int indexOf_whileStyle( Integer findMe) {
         int low = 0;
         int hi  = list_iAS.size() -1;  // inclusive
+	iterationCount = 0;
 
         while( low <= hi){
             int pageToCheck = (low + hi) / 2;
             int comparison =
               findMe.compareTo( list_iAS.get( pageToCheck));
+	    iterationCount++;
             if( comparison == 0) return pageToCheck;
             else
                 if( comparison < 0)
@@ -55,17 +61,18 @@ public class OrderedList_inArraySlots
     private int indexOf_recursive( Integer findMe
                                  , int low
                                  , int hi // inclusive
-                                 ) {
+				 , int count) {
         // System.out.println( "debug low: " + low
                           // + "   hi: " + hi);
         if( low > hi)  // detect base case
             return -2;   // solution to base case
               // value differs from while-style method, just FYI
         else{
-            int pageToCheck = (low + hi) / 2;
+            int pageToCheck = (low + hi) / 2;	
             int comparison =
               findMe.compareTo( list_iAS.get( pageToCheck));
-
+	    count++;
+	    iterationCount = count;
 
             if( comparison == 0)    // detect base case
                 return pageToCheck; // solution other base case
@@ -75,12 +82,14 @@ public class OrderedList_inArraySlots
                     // findMe's spot precedes pageToCheck
                     return indexOf_recursive( findMe
                                              , low
-                                             , pageToCheck -1);
+                                             , pageToCheck -1
+					     , count++);
                 else
                     // findMe's spot follows pageToCheck
                     return indexOf_recursive( findMe
                                             , pageToCheck +1
-                                            , hi);
+                                            , hi
+					    , count++);
         }
     }
 

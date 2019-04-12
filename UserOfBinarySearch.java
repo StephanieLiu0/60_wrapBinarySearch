@@ -31,6 +31,9 @@ public class UserOfBinarySearch {
               + " was found at index " + foundAt
               + ". That's correct, eh? " + (foundAt == i)
               );
+	    System.out.println( 
+	        "Iteration: " + orderedList.cost()
+              );
         }
         System.out.println();
 
@@ -56,6 +59,9 @@ public class UserOfBinarySearch {
           + " value " + value
           + " \"found\" at index " + foundAt
           + ". That's correct, eh? " + (foundAt < 0)
+          );
+	System.out.println( 
+	  "Iteration: " + orderedList.cost()
           );
      }
 }
