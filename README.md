@@ -19,7 +19,7 @@ desired name within the next smaller-sized page limits.
 
 **Base Case**: If the low limit is greater than the high limit, return -2.
 
-**Recursive Case**: If not,
+**Recursive Case**: If the low limit is not greater than the high limit,
 - Let pageToCheck equal the arithmetic mean of low and high.
 - Let comparison equal the result of comparing the desired name to the
 name on pageToCheck.
