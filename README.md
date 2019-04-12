@@ -1,4 +1,4 @@
-# hw60 wrap up binary search
+# hw60 wrap binary search
 
 
 ## Logarithms
