@@ -3,8 +3,8 @@
 
 ## Logarithms
 
-*y=log<sub>2</sub>x* means raising 2 to the *y*th power to get *x*.
-Its graph is the graph of y=2<sup>2</sup> reflected over y=x.
+*count=log<sub>2</sub>x* means *count* is the power to which 2 is raised to get the number *n*.
+Its graph is the graph of y=2<sup>x</sup> reflected over y=x.
 
 
 ## Recursive Solution
